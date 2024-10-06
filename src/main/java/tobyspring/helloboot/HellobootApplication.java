@@ -9,6 +9,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServer;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 
 import java.io.IOException;
 
@@ -19,9 +22,10 @@ public class HellobootApplication {
             servletContext.addServlet("hello", new HttpServlet() {
                 @Override
                 public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-                    res.setStatus(200);
-                    res.setHeader("Content-Type","text/plain");
-                    res.getWriter().println("Hello Servlet!");
+                    String name = req.getParameter("name");
+                    res.setStatus(HttpStatus.OK.value());
+                    res.setHeader(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_VALUE);
+                    res.getWriter().println("Hello " + name);
                 }
             }).addMapping("/hello");
         });
