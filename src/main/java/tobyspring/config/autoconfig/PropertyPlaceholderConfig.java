@@ -1,6 +1,5 @@
 package tobyspring.config.autoconfig;
 
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import tobyspring.config.MyAutoConfiguration;
