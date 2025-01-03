@@ -14,9 +14,9 @@ import java.util.Map;
 import static org.springframework.core.annotation.AnnotationUtils.*;
 
 @MyAutoConfiguration
-public class PropertyPostProcessorConfig {
+public  class PropertyPostProcessorConfig {
     @Bean
-    BeanPostProcessor propertyPostProcessor(Environment env) {
+    public static BeanPostProcessor propertyPostProcessor(Environment env) {
         return new BeanPostProcessor() {
 
             @Override

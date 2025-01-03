@@ -19,5 +19,4 @@ public class HelloController {
         if(name == null || name.trim().length() == 0) throw new IllegalArgumentException();
         return helloService.sayHello(name);
     }
-
 }
