@@ -24,6 +24,7 @@ dependencies {
     implementation 'org.springframework:spring-jdbc'
     runtimeOnly 'com.h2database:h2'
     implementation 'com.zaxxer:HikariCP:5.0.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
